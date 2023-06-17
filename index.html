@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll of Text</title>
+    <style>
+
+        body{
+            font-family: roboto;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        a{
+            color: rgb(222, 15, 15);
+        }
+
+        .group{
+            position: relative;
+            height: 30px;
+            overflow: hidden;
+            color: #fff;
+            background-color: #0000008e;
+            border-bottom: 2px solid #009cff;
+            border-top: 2px solid #009cff;
+        }
+
+        .group .text{
+            position: absolute;
+            margin: 5px 0;
+            padding: 0;
+            font-weight: 600;
+
+            width: max-content;
+            animation: my-animation 24s linear infinite;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="group">
+        <!-- <p class="text"> Welcome to an Infinite Earning Experience </p> -->
+        <p class="text"> Experience the Infinite Earning Potential of <a href="#" target="_blank" rel="noopener noreferrer">FISIDI.World</a></p>
+        <!-- <p class="text"> Welcome to <a href="#" target="_blank" rel="noopener noreferrer">FISIDI.World</a> an Infinite Earning Experience</p> -->
+
+
+        </div>
+    </div>
+
+<script>
+    var style = document.createElement('style');
+    var position = 'right';
+    // var position = 'left';
+
+    style.innerHTML =`
+    @keyframes my-animation{
+      0%{${postion}: -${document.querySelector('.text').offsetWidth + 10}px;}
+      100%{${position}: 100%;}
+    }`;
+
+    document.head.append(style);
+
+</script>
+
+</body>
+</html>
